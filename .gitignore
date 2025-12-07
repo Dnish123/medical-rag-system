@@ -1,0 +1,12 @@
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+books/
+*.pdf
+.DS_Store
+.streamlit/
+.idea/
