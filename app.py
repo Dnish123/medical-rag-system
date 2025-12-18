@@ -268,16 +268,11 @@ def main():
                     response_text = "I couldn't find relevant information in the medical textbooks for this question. Could you rephrase or ask something else?"
                     references = []
                 else:
-                    # Generate response
+                    # Generate user-focused response
                     response = llm_chain.generate_answer(user_input, retrieved_docs)
 
-                    # Format response with sections
-                    response_text = f"""**Answer:**
-{response['answer']}
-
-**📚 Detailed Explanation:**
-{response['explanation']}"""
-
+                    # Get conversational content
+                    response_text = response['content']
                     references = response.get('references', [])
 
                 query_time = time.time() - start_time
